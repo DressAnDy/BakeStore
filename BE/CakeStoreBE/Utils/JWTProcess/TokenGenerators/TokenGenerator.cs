@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CakeStoreBE.Utils.JWTProcess.TokenGenerator
+namespace CakeStoreBE.Utils.JWTProcess.TokenGenerators
 {
     public class TokenGenerator
     {
