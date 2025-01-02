@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "api/User/Create User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTO",
+        "Type": "CakeStoreBE.Application.DTOs.UsersDTOs.CreateUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.UserController",
+    "Method": "DeleteUserById",
+    "RelativePath": "api/User/Delete User By Id",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.UserController",
+    "Method": "GetAllUser",
+    "RelativePath": "api/User/Get All User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/Get User By Id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/Update User",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "_updateUserDTO",
+        "Type": "CakeStoreBE.Application.DTOs.UsersDTOs.UpdateUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
