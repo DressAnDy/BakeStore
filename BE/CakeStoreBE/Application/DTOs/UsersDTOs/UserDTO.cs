@@ -16,7 +16,7 @@
     
         public string Address {  get; set; } = string.Empty;
 
-        public string RoleId { get; set; }
+        public int RoleId { get; set; }
     }
 
     public class CreateUserDTO
@@ -33,6 +33,6 @@
 
         public string Address { get; set; } = string.Empty;
 
-        public string RoleId { get; set; }
+        public int RoleId { get; set; }
     }
 }

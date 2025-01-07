@@ -17,7 +17,7 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenValidators
 
         public ClaimsPrincipal? ValidateToken(string token)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.Key));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.key));
 
             var parameters = new TokenValidationParameters
             {

@@ -1,5 +1,5 @@
 import React from "react";
-import Homepage from "./components/MenuPage/MenuPage";
+import Homepage from "./components/HomePage/HomePage";
 
 const App: React.FC = () => {
   return (
