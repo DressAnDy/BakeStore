@@ -8,16 +8,16 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenValidators
 {
     public class TokenValidator
     {
-        private readonly JwtOptions _options;
+        private readonly JwtServices _options;
 
-        public TokenValidator(IOptions<JwtOptions> options)
+        public TokenValidator(IOptions<JwtServices> options)
         {
             _options = options.Value;
         }
 
         public ClaimsPrincipal? ValidateToken(string token)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.key));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecrectKey));
 
             var parameters = new TokenValidationParameters
             {

@@ -7,6 +7,22 @@
       "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:application\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\tokenvalidators\\tokenvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\tokenvalidators\\tokenvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\jwtservicefacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\jwtservicefacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\tokengenerators\\tokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\tokengenerators\\tokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\jwtservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\jwtservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\payload\\authrespone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\tokengenerators\\tokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\tokengenerators\\tokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\application\\dtos\\usersdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:application\\dtos\\usersdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,18 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\payload\\payloadconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\payload\\payloadconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\tokenvalidators\\tokenvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\tokenvalidators\\tokenvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\utils\\jwtprocess\\jwtservicefacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|solutionrelative:utils\\jwtprocess\\jwtservicefacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AFFA8ABF-8786-4E8A-8C46-78BFEC4B0E05}|CakeStoreBE.csproj|c:\\users\\admin\\desktop\\cakestoreproject\\be\\cakestorebe\\infrastructure\\database\\bakestoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "Application\\Services\\AuthServices.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\Services\\AuthServices.cs",
               "RelativeToolTip": "Application\\Services\\AuthServices.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA3wF0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAuwIUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T13:08:51.556Z",
               "EditorCaption": ""
@@ -128,55 +128,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "LoginUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
-              "RelativeToolTip": "Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T13:28:46.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RegisterUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
-              "RelativeToolTip": "Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T13:35:30.645Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\UserDTO.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\UsersDTOs\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\UserDTO.cs",
-              "RelativeToolTip": "Application\\DTOs\\UsersDTOs\\UserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T08:49:46.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserServices.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\Services\\IUserServices.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\IUserServices.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\Services\\IUserServices.cs",
-              "RelativeToolTip": "Application\\Services\\IUserServices.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAQwDIAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T16:15:30.397Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Hasher.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\Hash\\Hasher.cs",
               "RelativeDocumentMoniker": "Utils\\Hash\\Hasher.cs",
@@ -188,32 +139,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Domain\\User.cs",
               "RelativeDocumentMoniker": "Domain\\User.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Domain\\User.cs",
               "RelativeToolTip": "Domain\\User.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAwwBYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA3wBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-25T14:42:06.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "TokenGenerator.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\TokenGenerators\\TokenGenerator.cs",
               "RelativeDocumentMoniker": "Utils\\JWTProcess\\TokenGenerators\\TokenGenerator.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\TokenGenerators\\TokenGenerator.cs",
               "RelativeToolTip": "Utils\\JWTProcess\\TokenGenerators\\TokenGenerator.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwCoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T14:36:13.891Z"
+              "WhenOpened": "2025-01-06T14:36:13.891Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "JwtServiceFacade.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtServiceFacade.cs",
+              "RelativeDocumentMoniker": "Utils\\JWTProcess\\JwtServiceFacade.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtServiceFacade.cs",
+              "RelativeToolTip": "Utils\\JWTProcess\\JwtServiceFacade.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T17:42:57.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtServices.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtServices.cs",
+              "RelativeDocumentMoniker": "Utils\\JWTProcess\\JwtServices.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtServices.cs",
+              "RelativeToolTip": "Utils\\JWTProcess\\JwtServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T17:41:27.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TokenValidator.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
+              "RelativeDocumentMoniker": "Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
+              "RelativeToolTip": "Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T17:36:06.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserServices.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\Services\\IUserServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\IUserServices.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\Services\\IUserServices.cs",
+              "RelativeToolTip": "Application\\Services\\IUserServices.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAQwDIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T16:15:30.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\UsersDTOs\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\UserDTO.cs",
+              "RelativeToolTip": "Application\\DTOs\\UsersDTOs\\UserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T08:49:46.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterUserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
+              "RelativeToolTip": "Application\\DTOs\\UsersDTOs\\RegisterUserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T13:35:30.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginUserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
+              "RelativeToolTip": "Application\\DTOs\\UsersDTOs\\LoginUserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T13:28:46.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Enums.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Constants\\Enum\\Enums.cs",
               "RelativeDocumentMoniker": "Constants\\Enum\\Enums.cs",
@@ -221,12 +260,11 @@
               "RelativeToolTip": "Constants\\Enum\\Enums.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T15:59:03.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T15:59:03.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "AuthRespone.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\Payload\\AuthRespone.cs",
               "RelativeDocumentMoniker": "Utils\\Payload\\AuthRespone.cs",
@@ -238,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "PayloadConverter.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\Payload\\PayloadConverter.cs",
               "RelativeDocumentMoniker": "Utils\\Payload\\PayloadConverter.cs",
@@ -247,30 +285,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-02T17:42:59.181Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TokenValidator.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
-              "RelativeDocumentMoniker": "Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
-              "RelativeToolTip": "Utils\\JWTProcess\\TokenValidators\\TokenValidator.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBMAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T17:36:06.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "JwtOptions.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtOptions.cs",
-              "RelativeDocumentMoniker": "Utils\\JWTProcess\\JwtOptions.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtOptions.cs",
-              "RelativeToolTip": "Utils\\JWTProcess\\JwtOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T17:41:27.168Z"
             },
             {
               "$type": "Document",
@@ -295,18 +309,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-22T16:30:44.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "JwtServiceFacade.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtServiceFacade.cs",
-              "RelativeDocumentMoniker": "Utils\\JWTProcess\\JwtServiceFacade.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\CakeStoreProject\\BE\\CakeStoreBE\\Utils\\JWTProcess\\JwtServiceFacade.cs",
-              "RelativeToolTip": "Utils\\JWTProcess\\JwtServiceFacade.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T17:42:57.561Z"
             },
             {
               "$type": "Document",

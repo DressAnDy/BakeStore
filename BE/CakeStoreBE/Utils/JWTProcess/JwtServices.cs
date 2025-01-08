@@ -1,8 +1,8 @@
 ﻿namespace CakeStoreBE.Utils.JWTProcess
 {
-    public class JwtOptions
+    public class JwtServices 
     {
-        public string key {  get; set; }
+        public string SecrectKey {  get; set; }
 
         public string Issuer { get; set; }
 

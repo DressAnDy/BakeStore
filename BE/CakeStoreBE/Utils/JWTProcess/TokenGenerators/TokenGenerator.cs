@@ -10,10 +10,10 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenGenerators
 {
     public class TokenGenerator
     {
-       private readonly JwtOptions _jwtOptions;
+       private readonly JwtServices _jwtOptions;
        private readonly JwtSecurityTokenHandler jwtSecurityTokenHandler;
 
-        public TokenGenerator(IOptions<JwtOptions> _options)
+        public TokenGenerator(IOptions<JwtServices> _options)
         {
             _jwtOptions = _options.Value;
             jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
@@ -21,7 +21,7 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenGenerators
 
         public string GenerateAccessToken(IEnumerable<Claim> claims)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.key));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecrectKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
