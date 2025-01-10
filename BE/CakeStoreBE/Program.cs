@@ -1,6 +1,7 @@
 
 using CakeStoreBE.Application.Services;
 using CakeStoreBE.Infrastructure.Database;
+using CakeStoreBE.Utils.JWTProcess.TokenGenerators;
 using Microsoft.EntityFrameworkCore;
 
 namespace CakeStoreBE
@@ -20,8 +21,10 @@ namespace CakeStoreBE
 
             //AddScope cho Services
             builder.Services.AddScoped<IUserServices, UserServices>();
-
-
+            builder.Services.AddScoped<IAuthServices, AuthServices>();
+            builder.Services.AddScoped<TokenGenerator>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddHttpContextAccessor();
 
 
             var app = builder.Build();
