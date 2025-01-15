@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace CakeStoreBE.Domain;
 
-public partial class Role
+public class Role
 {
-    public string RoleId { get; set; } = null!;
+    public int RoleId { get; set; }
 
-    public string RoleName { get; set; } = null!;
+    public string RoleName { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 

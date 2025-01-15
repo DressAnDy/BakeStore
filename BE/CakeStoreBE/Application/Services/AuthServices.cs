@@ -8,6 +8,7 @@ using CakeStoreBE.Utils.JWTProcess.TokenGenerators;
 using CakeStoreBE.Utils.JWTProcess.TokenValidators;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using System.Security.Claims;
 
@@ -52,6 +53,10 @@ namespace CakeStoreBE.Application.Services
                 return BadRequest("Password and ConfirmPassword do not match");
             }
 
+            if(_user != null && _user.Any(u => u.Email == registerUserDTO.Email)){
+                return BadRequest("Email already in user");
+            }
+
             var rawData = $"{registerUserDTO.UserName}-{DateTime.UtcNow.Ticks}";
             var hashUserID = Hasher.HashWithSHA256(rawData);
             var hashPassword = Hasher.HashWithSHA256(registerUserDTO.Password);
@@ -60,7 +65,9 @@ namespace CakeStoreBE.Application.Services
             {
                 UserId = hashUserID,
                 Username = registerUserDTO.UserName,
+                Email = registerUserDTO.Email,
                 Password = hashPassword,
+                RoleId = 0,
                 CreatedAt = DateTime.UtcNow,
             };
 
@@ -70,39 +77,44 @@ namespace CakeStoreBE.Application.Services
             return Ok("Register Successful");
         }
 
+
+        //HashPassword đang ko nhận đầu vào , không nhận diện được người dùng
+        //
+
         public async Task<IActionResult> HandleLogin(LoginUserDTO _login)
         {
             try
             {
-                var user = _user.FirstOrDefault(u => u.Username == _login.UserName);
+            var user = await _context.Users
+                            .FirstOrDefaultAsync(u => u.Username == _login.UserName);
 
                 if (user == null)
                 {
-                    return Unauthorized(new { message = "Invalid Username Or Password" });
+                    return Unauthorized(new { message = "Invalid Username or Password" });
                 }
 
                 var password = Hasher.HashWithSHA256(_login.Password);
                 if (password != user.Password)
                 {
-                    return Unauthorized("Invalid Username Or Password");
+                    return Unauthorized("Invalid Username or Password");
                 }
 
                 var claims = new List<Claim>
-            {
-                //Claim là mẫu thông tin về một Entity ( thường là user ) được gắn vào Identity ( Nhận dạng người dùng )
-
-
-                //Một claim có thể chứa thông tin như sau
-                new Claim(ClaimTypes.NameIdentifier, user.UserId), // UserId
-                new Claim(ClaimTypes.Name, user.Username), // Username          
-            };
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.UserId),
+            new Claim(ClaimTypes.Name, user.Username),
+        };
 
                 var userRole = user.RoleId.ToString();
                 claims.Add(new Claim("role", userRole));
 
                 var accessToken = _tokenGenerator.GenerateAccessToken(claims);
-
                 var refreshToken = _tokenGenerator.GenerateRefreshToken();
+
+                if (accessToken == null || refreshToken == null)
+                {
+                    return Unauthorized("Token generation failed");
+                }
 
                 _cache.Set($"RefreshToken_{user.UserId}", refreshToken, TimeSpan.FromDays(7));
 
@@ -113,6 +125,10 @@ namespace CakeStoreBE.Application.Services
                     SameSite = SameSiteMode.Strict,
                     Expires = DateTimeOffset.UtcNow.AddDays(7)
                 });
+
+                var accessTokenInfo = _tokenGenerator.GenerateAccessToken(claims);
+                var refreshTokenInfo = _tokenGenerator.GenerateRefreshToken();
+
 
                 var userInfo = new
                 {
@@ -125,6 +141,8 @@ namespace CakeStoreBE.Application.Services
                     user.Address,
                     user.RoleId,
                     user.CreatedAt,
+                    AccessToken = accessTokenInfo,
+                    RefreshToken = refreshTokenInfo,
                 };
 
                 return Ok(userInfo);

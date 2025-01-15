@@ -60,7 +60,7 @@ namespace CakeStoreBE.Application.Services
                 LastName = _userDTO.LastName,
                 Phone = _userDTO.Phone,
                 Address = _userDTO.Address,
-                RoleId = ((int)Enums.userRole.Customer).ToString(),
+                RoleId = 0,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
             };

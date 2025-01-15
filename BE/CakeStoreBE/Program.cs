@@ -1,6 +1,7 @@
 
 using CakeStoreBE.Application.Services;
 using CakeStoreBE.Infrastructure.Database;
+using CakeStoreBE.Utils.JWTProcess;
 using CakeStoreBE.Utils.JWTProcess.TokenGenerators;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,8 @@ namespace CakeStoreBE
             builder.Services.AddScoped<TokenGenerator>();
             builder.Services.AddMemoryCache();
             builder.Services.AddHttpContextAccessor();
+            builder.Services.Configure<JwtServices>(builder.Configuration.GetSection("JwtServices"));
+            
 
 
             var app = builder.Build();
