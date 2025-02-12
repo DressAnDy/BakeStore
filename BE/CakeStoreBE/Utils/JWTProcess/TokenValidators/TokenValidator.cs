@@ -31,7 +31,49 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenValidators
             };
 
             var handler = new JwtSecurityTokenHandler();
-            return handler.ValidateToken(token, parameters, out _);
+
+            try
+            {
+                var claimsPrincipal = handler.ValidateToken(token, parameters, out var validatedToken);
+
+                if (validatedToken is not JwtSecurityToken jwtToken)
+                {
+                    Console.WriteLine("Validated token is not a JwtSecurityToken.");
+                    return null;
+                }
+
+                // Kiểm tra thuật toán của token
+                if (!jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Console.WriteLine("Invalid token algorithm. Expected: HS256.");
+                    return null;
+                }
+
+                // Đảm bảo rằng không có lỗi khi xác thực Token
+                Console.WriteLine($"Token is valid. User claims: {claimsPrincipal.Identity.Name}");
+
+                return claimsPrincipal;
+            }
+            catch (SecurityTokenExpiredException)
+            {
+                Console.WriteLine("Token has expired.");
+                return null;
+            }
+            catch (SecurityTokenInvalidSignatureException)
+            {
+                Console.WriteLine("Token signature is invalid.");
+                return null;
+            }
+            catch (SecurityTokenException ex)
+            {
+                Console.WriteLine($"Token validation failed: {ex.Message}");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error during token validation: {ex.Message}");
+                return null;
+            }
         }
     }
 }

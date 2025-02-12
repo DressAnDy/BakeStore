@@ -28,7 +28,7 @@ public partial class BakeStoreDbContext : DbContext
 
     public virtual DbSet<Payment> Payments { get; set; }
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<CakeProduct> CakeProduct { get; set; }
 
     public virtual DbSet<ReturnRequest> ReturnRequests { get; set; }
 
@@ -75,7 +75,7 @@ public partial class BakeStoreDbContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.DiscountAmount).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
-            entity.Property(e => e.ProductId)
+            entity.Property(e => e.CakeId)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.StartDate).HasColumnType("datetime");
@@ -83,9 +83,9 @@ public partial class BakeStoreDbContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
 
-            entity.HasOne(d => d.Product).WithMany(p => p.Discounts)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Discounts__Produ__7B5B524B");
+            entity.HasOne(d => d.Cake).WithMany(p => p.Discounts)
+                .HasForeignKey(d => d.CakeId)
+                .HasConstraintName("FK__Discounts__CakeI__7B5B524B");
         });
 
         modelBuilder.Entity<InventoryLog>(entity =>
@@ -99,13 +99,13 @@ public partial class BakeStoreDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.ProductId)
+            entity.Property(e => e.CakeId)
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Product).WithMany(p => p.InventoryLogs)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Inventory__Produ__76969D2E");
+            entity.HasOne(d => d.Cake).WithMany(p => p.InventoryLogs)
+                .HasForeignKey(d => d.CakeId)
+                .HasConstraintName("FK__Inventory__CakeI__76969D2E");
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -146,7 +146,7 @@ public partial class BakeStoreDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
-            entity.Property(e => e.ProductId)
+            entity.Property(e => e.CakeId)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedAt)
@@ -157,9 +157,9 @@ public partial class BakeStoreDbContext : DbContext
                 .HasForeignKey(d => d.OrderId)
                 .HasConstraintName("FK__OrderItem__Order__66603565");
 
-            entity.HasOne(d => d.Product).WithMany(p => p.OrderItems)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__OrderItem__Produ__6754599E");
+            entity.HasOne(d => d.Cake).WithMany(p => p.OrderItems)
+                .HasForeignKey(d => d.CakeId)
+                .HasConstraintName("FK__OrderItem__CakeI__6754599E");
         });
 
         modelBuilder.Entity<Payment>(entity =>
@@ -190,11 +190,11 @@ public partial class BakeStoreDbContext : DbContext
                 .HasConstraintName("FK__Payments__OrderI__6D0D32F4");
         });
 
-        modelBuilder.Entity<Product>(entity =>
+        modelBuilder.Entity<CakeProduct>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6CDC9EA2EEB");
+            entity.HasKey(e => e.CakeId).HasName("PK__CakeProd__C56DBF1518B51CB6");
 
-            entity.Property(e => e.ProductId)
+            entity.Property(e => e.CakeId)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.CategoryId)
@@ -210,9 +210,9 @@ public partial class BakeStoreDbContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
 
-            entity.HasOne(d => d.Category).WithMany(p => p.Products)
+            entity.HasOne(d => d.Category).WithMany(p => p.Cake)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Products__Catego__5812160E");
+                .HasConstraintName("FK__CakeProdu__Categ__5812160E");
         });
 
         modelBuilder.Entity<ReturnRequest>(entity =>
@@ -253,7 +253,7 @@ public partial class BakeStoreDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.ProductId)
+            entity.Property(e => e.CakeId)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedAt)
@@ -263,9 +263,9 @@ public partial class BakeStoreDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Product).WithMany(p => p.Reviews)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Reviews__Product__72C60C4A");
+            entity.HasOne(d => d.Cake).WithMany(p => p.Reviews)
+                .HasForeignKey(d => d.CakeId)
+                .HasConstraintName("FK__Reviews__CakeId__72C60C4A");
 
             entity.HasOne(d => d.User).WithMany(p => p.Reviews)
                 .HasForeignKey(d => d.UserId)

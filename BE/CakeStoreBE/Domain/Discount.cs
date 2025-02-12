@@ -7,7 +7,7 @@ public partial class Discount
 {
     public string DiscountId { get; set; } = null!;
 
-    public string? ProductId { get; set; }
+    public string? CakeId { get; set; }
 
     public decimal? DiscountAmount { get; set; }
 
@@ -19,5 +19,5 @@ public partial class Discount
 
     public DateTime? UpdatedAt { get; set; }
 
-    public virtual Product? Product { get; set; }
+    public virtual CakeProduct? Cake { get; set; }
 }

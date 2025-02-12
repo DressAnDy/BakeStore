@@ -77,10 +77,6 @@ namespace CakeStoreBE.Application.Services
             return Ok("Register Successful");
         }
 
-
-        //HashPassword đang ko nhận đầu vào , không nhận diện được người dùng
-        //
-
         public async Task<IActionResult> HandleLogin(LoginUserDTO _login)
         {
             try
@@ -209,6 +205,7 @@ namespace CakeStoreBE.Application.Services
         {
             try
             {
+
                 var claimsPrincipal = _tokenValidator.ValidateToken(token);
 
                 if (claimsPrincipal == null)
@@ -222,7 +219,10 @@ namespace CakeStoreBE.Application.Services
                     return Unauthorized("User ID not found in token");
                 }
 
-                var user = _user.FirstOrDefault(u => u.UserId == userId);
+                var user = await _context.Users
+                    .Include(u => u.RoleId)
+                    .FirstOrDefaultAsync(u => u.UserId == userId);
+
                 if (user == null)
                 {
                     return NotFound("User not found");

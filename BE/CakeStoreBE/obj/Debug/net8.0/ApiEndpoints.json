@@ -58,6 +58,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.CakeController",
+    "Method": "CreateCakeProduct",
+    "RelativePath": "api/Cake/Create Cake Product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCakeDTO",
+        "Type": "CakeStoreBE.Application.DTOs.CakeProductDTOs.CreateCakeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.CakeController",
+    "Method": "DeleteCakeById",
+    "RelativePath": "api/Cake/Delete Cake By Id",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cakeId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.CakeController",
+    "Method": "GetAllCake",
+    "RelativePath": "api/Cake/Get All Cake",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.CakeController",
+    "Method": "GetCakeById",
+    "RelativePath": "api/Cake/Get Cake By Id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cakeId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CakeStoreBE.Presentation.Controllers.CakeController",
+    "Method": "UpdateCakeProduct",
+    "RelativePath": "api/Cake/Update Cake Product",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateCakeProductDTO",
+        "Type": "CakeStoreBE.Application.DTOs.CakeProductDTOs.UpdateCakeProductDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CakeStoreBE.Presentation.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User/Create User",

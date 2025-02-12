@@ -23,6 +23,7 @@ namespace CakeStoreBE
             //AddScope cho Services
             builder.Services.AddScoped<IUserServices, UserServices>();
             builder.Services.AddScoped<IAuthServices, AuthServices>();
+            builder.Services.AddScoped<ICakeProductServices, CakeProductServices>();
             builder.Services.AddScoped<TokenGenerator>();
             builder.Services.AddMemoryCache();
             builder.Services.AddHttpContextAccessor();

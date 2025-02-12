@@ -9,7 +9,7 @@ public partial class Review
 
     public string? UserId { get; set; }
 
-    public string? ProductId { get; set; }
+    public string? CakeId { get; set; }
 
     public int? Rating { get; set; }
 
@@ -19,7 +19,7 @@ public partial class Review
 
     public DateTime? UpdatedAt { get; set; }
 
-    public virtual Product? Product { get; set; }
+    public virtual CakeProduct? Cake { get; set; }
 
     public virtual User? User { get; set; }
 }

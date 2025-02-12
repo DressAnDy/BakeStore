@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace CakeStoreBE.Domain;
 
-public partial class Product
+public partial class CakeProduct
 {
-    public string ProductId { get; set; } = null!;
+    public string CakeId { get; set; }
 
     public string? CategoryId { get; set; }
 

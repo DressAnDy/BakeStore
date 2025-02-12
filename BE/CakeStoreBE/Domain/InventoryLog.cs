@@ -7,7 +7,7 @@ public partial class InventoryLog
 {
     public string InventoryLogId { get; set; } = null!;
 
-    public string? ProductId { get; set; }
+    public string? CakeId { get; set; }
 
     public int? QuantityChange { get; set; }
 
@@ -15,5 +15,5 @@ public partial class InventoryLog
 
     public DateTime? CreatedAt { get; set; }
 
-    public virtual Product? Product { get; set; }
+    public virtual CakeProduct? Cake { get; set; }
 }
