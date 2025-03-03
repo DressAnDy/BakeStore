@@ -1,6 +1,7 @@
 ﻿using CakeStoreBE.Application.DTOs.LoginUserDTOs;
 using CakeStoreBE.Application.DTOs.UsersDTOs;
 using CakeStoreBE.Application.Services;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CakeStoreBE.Presentation.Controllers
@@ -27,6 +28,32 @@ namespace CakeStoreBE.Presentation.Controllers
         {
             return await _authServices.HandleLogin(loginUserDTO);
         }
+
+        [HttpPost("forgot-password")]
+        public IActionResult ForgetPassword([FromBody] string email)
+        {
+            var resetToken = _authServices.HandleGeneratePasswordResetToken(email);
+            if(resetToken == null){
+                return BadRequest("User not found");
+            }
+
+            return Ok(resetToken);
+        }
+
+        [HttpPost("reset-password")]
+        public IActionResult ResetPassword([FromBody] PasswordRequest request)
+        {
+            var expiryDate = DateTime.SpecifyKind(request.ExpiryDate, DateTimeKind.Utc).AddSeconds(30);
+
+            if (expiryDate < DateTime.UtcNow)
+            {
+                return BadRequest("Token Expired");
+            }
+
+            _authServices.HandleUpdatePassword(request.NewPassword);
+            return Ok("Password has been reset successfully");
+        }
+
 
         [HttpPost("refresh-token")]
         public async Task<IActionResult> RefreshToken()
