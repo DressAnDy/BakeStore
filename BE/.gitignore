@@ -1,0 +1,17 @@
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/
+.idea/
+
+# ASP.NET Core secrets and configs
+appsettings.json
+appsettings.Development.json
+secrets.json

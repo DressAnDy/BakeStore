@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Options;
+﻿using CakeStoreBE.Application.DTOs.UsersDTOs;
+using CakeStoreBE.Infrastructure.Database;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection.Metadata;
@@ -12,11 +14,14 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenGenerators
     {
        private readonly JwtServices _jwtOptions;
        private readonly JwtSecurityTokenHandler jwtSecurityTokenHandler;
+       private readonly BakeStoreDbContext _context;
 
-        public TokenGenerator(IOptions<JwtServices> _options)
+
+        public TokenGenerator(IOptions<JwtServices> _options, BakeStoreDbContext context)
         {
             _jwtOptions = _options.Value;
             jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            _context = context;
         }
 
         public string GenerateAccessToken(IEnumerable<Claim> claims)
@@ -40,6 +45,23 @@ namespace CakeStoreBE.Utils.JWTProcess.TokenGenerators
             using var rng = RandomNumberGenerator.Create();
             rng.GetBytes(randomNumber);
             return Convert.ToBase64String(randomNumber);
+        }
+
+        public PasswordResetTokenDTO? GeneratePasswordResetToken(string email){
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
+            var expiryDate = DateTime.UtcNow.AddMinutes(120);
+
+            return new PasswordResetTokenDTO{
+                Token = token,
+                ExpiryDate = expiryDate,
+                Email = email
+            };
         }
     }
 }

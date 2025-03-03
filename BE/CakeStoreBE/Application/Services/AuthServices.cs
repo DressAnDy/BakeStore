@@ -17,10 +17,12 @@ namespace CakeStoreBE.Application.Services
 
     public interface IAuthServices
     {
-       public Task<IActionResult> HandleLogin(LoginUserDTO loginUserDTO);
-       public Task<IActionResult> HandleRegister(RegisterUserDTO registerUserDTO);
-       public Task<IActionResult> HandleRefreshToken();
-       public Task<IActionResult> HandleCheckToken(string token);
+        public Task<IActionResult> HandleLogin(LoginUserDTO loginUserDTO);
+        public Task<IActionResult> HandleRegister(RegisterUserDTO registerUserDTO);
+        public Task<IActionResult> HandleRefreshToken();
+        public Task<IActionResult> HandleCheckToken(string token);
+        public PasswordResetTokenDTO? HandleGeneratePasswordResetToken(string email);
+        public void HandleUpdatePassword(string newPassword);
     }
     public class AuthServices : ControllerBase, IAuthServices
     {
@@ -30,7 +32,6 @@ namespace CakeStoreBE.Application.Services
         private List<User> _user = new List<User>();
         private readonly TokenValidator _tokenValidator;
         private readonly BakeStoreDbContext _context;
-
 
         public AuthServices(TokenGenerator tokenGenerator, IMemoryCache cache, IHttpContextAccessor httpContextAccessor, BakeStoreDbContext context)
         {
@@ -246,6 +247,83 @@ namespace CakeStoreBE.Application.Services
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        public PasswordResetTokenDTO? HandleGeneratePasswordResetToken(string email){
+            //Using email to validate User in database to generate token
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);                     
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            var user_password_reset_token = _tokenGenerator.GeneratePasswordResetToken(email);
+            if(user_password_reset_token == null || user_password_reset_token.ExpiryDate < DateTime.UtcNow){
+                throw new Exception("Generate token failed");
+            }
+
+            var token_respone = _httpContextAccessor.HttpContext?.Response;
+            if(token_respone != null){
+                token_respone.Cookies.Append("PasswordResetToken", user_password_reset_token.Token, new CookieOptions {
+                    HttpOnly = true, //prevent access from Javascript
+                    Secure = true, //prevent access from http
+                    Expires = DateTime.UtcNow.AddMinutes(60),
+                    SameSite = SameSiteMode.None
+                });
+
+                token_respone.Cookies.Append("PasswordResetTokenEmail", email, new CookieOptions {
+                    HttpOnly = true,
+                    Secure = true,
+                    Expires = DateTime.UtcNow.AddMinutes(60),
+                    SameSite = SameSiteMode.None
+                });
+
+            }
+            return user_password_reset_token;
+        }
+
+        public void HandleUpdatePassword(string newPassword)
+        {
+            //Check Context null
+            var httpContext = _httpContextAccessor.HttpContext;
+            if (httpContext == null)
+            {
+                throw new Exception("HTTP Context is null");
+            }
+
+            //Take Request and Response
+            var request = httpContext.Request;
+            var response = httpContext.Response;
+
+            if (request == null || response == null)
+            {
+                throw new Exception("Request or Response is null");
+            }
+
+            // Take token from cookie
+            if (!request.Cookies.TryGetValue("PasswordResetToken", out var token) ||
+                !request.Cookies.TryGetValue("PasswordResetTokenEmail", out var email) ||
+                string.IsNullOrWhiteSpace(token) ||
+                string.IsNullOrWhiteSpace(email))
+            {
+                throw new Exception("Token or Email not found in cookies");
+            }
+
+            // Check User in database
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+
+           
+            user.Password = Hasher.HashWithSHA256(newPassword);
+            _context.Users.Update(user);
+            _context.SaveChanges();
+
+            // Delete Token
+            response.Cookies.Delete("PasswordResetToken");
+            response.Cookies.Delete("PasswordResetTokenEmail");
         }
     }
 }
