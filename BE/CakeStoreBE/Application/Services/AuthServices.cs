@@ -33,13 +33,14 @@ namespace CakeStoreBE.Application.Services
         private readonly TokenValidator _tokenValidator;
         private readonly BakeStoreDbContext _context;
 
-        public AuthServices(TokenGenerator tokenGenerator, IMemoryCache cache, IHttpContextAccessor httpContextAccessor, BakeStoreDbContext context)
+        public AuthServices(TokenGenerator tokenGenerator, IMemoryCache cache, IHttpContextAccessor httpContextAccessor, BakeStoreDbContext context, TokenValidator tokenValidator)
         {
             _httpContextAccessor = httpContextAccessor;
             _cache = cache; 
             _tokenGenerator = tokenGenerator;
             _user = new List<User>();
             _context = context;
+            _tokenValidator = tokenValidator;
         }   
 
         public async Task<IActionResult> HandleRegister(RegisterUserDTO registerUserDTO)
@@ -83,7 +84,7 @@ namespace CakeStoreBE.Application.Services
             try
             {
             var user = await _context.Users
-                            .FirstOrDefaultAsync(u => u.Username == _login.UserName);
+                            .FirstOrDefaultAsync(u => u.Username == _login.Username);
 
                 if (user == null)
                 {
@@ -102,8 +103,14 @@ namespace CakeStoreBE.Application.Services
             new Claim(ClaimTypes.Name, user.Username),
         };
 
-                var userRole = user.RoleId.ToString();
-                claims.Add(new Claim("role", userRole));
+                // var userRole = user.RoleId.ToString();
+                // claims.Add(new Claim("role", userRole));
+
+                // foreach(var role in Role){
+                //     claims.Add(new Claim(ClaimTypes.Role, role));
+                // }
+
+                //check role to Authorize
 
                 var accessToken = _tokenGenerator.GenerateAccessToken(claims);
                 var refreshToken = _tokenGenerator.GenerateRefreshToken();
@@ -201,32 +208,44 @@ namespace CakeStoreBE.Application.Services
             return Ok(new { accessToken = newAccessToken });
 
         }
-
+        //Cant use!!!!!
         public async Task<IActionResult> HandleCheckToken(string token)
         {
             try
             {
+                if (_tokenValidator == null)
+                {
+                    throw new NullReferenceException("_tokenValidator is null. Ensure it is properly injected.");
+                }
 
                 var claimsPrincipal = _tokenValidator.ValidateToken(token);
-
                 if (claimsPrincipal == null)
                 {
-                    return Unauthorized("Invalid Token");
+                    Console.WriteLine("Token validation failed: claimsPrincipal is null.");
+                    return Unauthorized(new { message = "Invalid Token" });
                 }
 
-                var userId = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                if (userId == null)
+                var userIdClaim = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
                 {
-                    return Unauthorized("User ID not found in token");
+                    throw new NullReferenceException("ClaimTypes.NameIdentifier is missing in token.");
                 }
 
-                var user = await _context.Users
-                    .Include(u => u.RoleId)
-                    .FirstOrDefaultAsync(u => u.UserId == userId);
+                var userIdString = userIdClaim.Value;
+                if (string.IsNullOrEmpty(userIdString))
+                {
+                    return Unauthorized(new { message = "Invalid User ID format in token." });
+                }
 
+                if (_context == null || _context.Users == null)
+                {
+                    throw new NullReferenceException("_context or _context.Users is null. Check database connection.");
+                }
+
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userIdString);
                 if (user == null)
                 {
-                    return NotFound("User not found");
+                    return NotFound(new { message = "User not found" });
                 }
 
                 var userInfo = new
@@ -243,11 +262,14 @@ namespace CakeStoreBE.Application.Services
                 };
 
                 return Ok(new { message = "Token is valid", user = userInfo });
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                Console.WriteLine($"Error in HandleCheckToken: {ex.Message}");
+                return BadRequest(new { message = ex.Message });
             }
         }
+
 
         public PasswordResetTokenDTO? HandleGeneratePasswordResetToken(string email){
             //Using email to validate User in database to generate token
@@ -325,5 +347,11 @@ namespace CakeStoreBE.Application.Services
             response.Cookies.Delete("PasswordResetToken");
             response.Cookies.Delete("PasswordResetTokenEmail");
         }
+
+
+
+
+
+
     }
 }
