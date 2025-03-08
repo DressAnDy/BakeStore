@@ -3,6 +3,7 @@ using CakeStoreBE.Application.Services;
 using CakeStoreBE.Infrastructure.Database;
 using CakeStoreBE.Utils.JWTProcess;
 using CakeStoreBE.Utils.JWTProcess.TokenGenerators;
+using CakeStoreBE.Utils.JWTProcess.TokenValidators;
 using Microsoft.EntityFrameworkCore;
 
 namespace CakeStoreBE
@@ -25,10 +26,11 @@ namespace CakeStoreBE
             builder.Services.AddScoped<IAuthServices, AuthServices>();
             builder.Services.AddScoped<ICakeProductServices, CakeProductServices>();
             builder.Services.AddScoped<ICategoryServices, CategoryServices>();
-
+            builder.Services.AddScoped<IOrderServices, OrderServices>();
 
             //Token
             builder.Services.AddScoped<TokenGenerator>();
+            builder.Services.AddScoped<TokenValidator>();
             builder.Services.AddMemoryCache();
             builder.Services.AddHttpContextAccessor();
             builder.Services.Configure<JwtServices>(builder.Configuration.GetSection("JwtServices"));

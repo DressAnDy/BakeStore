@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "./DALL·E 2024-11-26 00.07.50 - A beautifully designed cake set in a professional photoshoot setting, showcasing intricate floral patterns and vibrant colors. The cake is placed on a.webp";
+import backgroundImage from "../../assets/images/DALL·E 2024-11-26 00.07.50 - A beautifully designed cake set in a professional photoshoot setting, showcasing intricate floral patterns and vibrant colors. The cake is placed on a.webp";
 import "./LoginPage.css";
 
 function LoginPage() {
